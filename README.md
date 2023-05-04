@@ -1,16 +1,13 @@
 # 第２回Firebase練習問題
 
 ## 問１
-FirestoreServiceクラスのgetUsersメソッドを実装してください。getUsersでは、
+FirestoreServiceクラスのgetMessagesStreamメソッドを実装してください。getMessagesStreamメソッドでは、投稿されたメッセージを日付順でlimitの数だけ取得します。
 
 ## 問２
-入力したユーザーIDをキー、パスワードを値としてSharedPreferenceに保存するsetAccountPref関数を完成させてください。
+読み込んだメッセージを全てStreamBuilderで表示してください。メッセージの表示にはMessageCardを使います。
 
 ## 問３
-SharedPreferenceに保存されているパスワードの内、入力したIDから、対応するパスワードを取得して返すgetPasswordByID関数を完成させてください。対応するパスワードがない場合は、nullを返してください。
-
-## 問４
-ホームページのAppBarの右側のポップアップメニューで、選択した色がAppBarの色に反映されるようにしてください。また、アプリを閉じても変更が保存されるようにしてください。
+メッセージを送信したら、TextFieldに入力したテキストがクリアされるようにしてください。
 
 ## 解答解説動画
 https://nk-free.com/mugi/videos/flutter_exercise_5.mp4
