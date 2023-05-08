@@ -64,13 +64,13 @@ class FirestorePracticeState extends State<FirestorePractice> {
               stream: _messagesStream,
               builder: (context, snapshot){
                 if(snapshot.hasData){
-                  List<DocumentSnapshot> postsData = snapshot.data!.docs;
+                  List<DocumentSnapshot> messagesData = snapshot.data!.docs;
                   return Expanded(
                     child: ListView.builder(
                       controller: _listScrollController,
-                        itemCount: postsData.length,
+                        itemCount: messagesData.length,
                         itemBuilder: (context, index){
-                          return MessageCard(postData: {},);
+                          return MessageCard(messageData: {},);
                         }
                     ),
                   );
@@ -112,18 +112,18 @@ class FirestorePracticeState extends State<FirestorePractice> {
 }
 
 class MessageCard extends StatelessWidget {
-  const MessageCard({Key? key, required this.postData}) : super(key: key);
-  final Map<String, dynamic> postData;
+  const MessageCard({Key? key, required this.messageData}) : super(key: key);
+  final Map<String, dynamic> messageData;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
         // データ型のチェックをしている
-        title: Text(postData['text'] is String? postData['text']:'無効なメッセージ'),
+        title: Text(messageData['text'] is String? messageData['text']:'無効なメッセージ'),
         // 日付の表示を整えている。intlパッケージが必要。
         subtitle: Text(DateFormat('yyyy/MM/dd HH:mm')
-            .format(DateTime.fromMillisecondsSinceEpoch(postData['date'] is int? postData['date']:0))),
+            .format(DateTime.fromMillisecondsSinceEpoch(messageData['date'] is int? messageData['date']:0))),
       ),
     );
   }
