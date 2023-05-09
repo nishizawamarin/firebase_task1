@@ -10,4 +10,4 @@ FirestoreServiceクラスのgetMessagesStreamメソッドを実装してくだ�
 メッセージを送信したら、TextFieldに入力したテキストがクリアされるようにしてください。
 
 ## 解答解説動画
-https://nk-free.com/mugi/videos/flutter_exercise_5.mp4
+https://nk-free.com/mugi/videos/firebase_exercise_2.mp4
