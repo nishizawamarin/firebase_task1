@@ -30,6 +30,7 @@ class FirestorePracticeState extends State<FirestorePractice> {
         // millisecondsSinceEpochは1970年1月1日午前0時0分0秒からの経過ミリ秒数
         'date': DateTime.now().millisecondsSinceEpoch
       });
+      _messageEditingController.clear();
       _listScrollController.jumpTo(_listScrollController.position.maxScrollExtent);
     } catch (e) {
       if(!mounted)return;
@@ -70,7 +71,8 @@ class FirestorePracticeState extends State<FirestorePractice> {
                       controller: _listScrollController,
                         itemCount: messagesData.length,
                         itemBuilder: (context, index){
-                          return MessageCard(messageData: {},);
+                        final messageData = messagesData[index].data() as Map<String, dynamic>;
+                          return MessageCard(messageData: messageData,);
                         }
                     ),
                   );

@@ -1,9 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_exercise_2/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_exercise_2/pages/home_page.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'constants/text_styles.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options:DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
